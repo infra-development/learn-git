@@ -1,3 +1,4 @@
 Another text
 Hello world
 How are you
+Life is great
