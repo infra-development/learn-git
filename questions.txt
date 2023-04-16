@@ -1,0 +1,30 @@
+Report Cover 
+
+General question for this first tab - What are these categories sorted by?
+
+Product > Music >  MB/user , delta and YoY are blank – we should have this category from last year. Do we have the data? (can be fix)
+Location > MTS 4G/5G, Bell 5-G and Telus 5G are all blank (have to check the data condition on where clause)
+location_5g_bell=AND LOWER(location_layer1) IN (LOWER('Bell - NR'))
+location_telus=AND LOWER(location_layer1) IN ( LOWER('Telus - LTE'), LOWER('Telus - NR'))
+location_mts=AND LOWER(location_layer1) IN ( LOWER('MTS - LTE'), LOWER('MTS - NR'))
+
+Total Traffic > Communication YoY blank (check total traffic query)
+ 
+Network Summary - 
+Product > Music blank (see above)
+Location > Bell and Telus blank (see above) 
+% of Total in Total Traffic are all 0.0% (Formatting double decimal)
+ 
+Smartphones
+multiple devices e.g. iphone 6s missing for Jan and Feb (CHeck on files) (Capital - Small Issue)
+ 
+Music -Overlap
+Spotify , first table shows % of user =100% -  how? (Give explaination)
+
+
+
+
+Final: LOG_query : select count(distinct subscriberid) from monthly_points where cast(bintag as string) IN ('1646092800') AND ((ods1 in ('Social') AND ods2 in ('Text, Voice and Video Communication')) OR (ods1 in ('Communication') AND ods2 NOT IN ('Email') AND ods2 IN ('Collaboration'))) and lower(ods3) NOT LIKE ('%other%')
+
+
+Final: LOG_query : select count(distinct subscriberid) from monthly_points where cast(bintag as string) IN ('1677628800') AND ((ods1 in ('Social') AND ods2 in ('Text, Voice and Video Communication')) OR (ods1 in ('Communication') AND ods2 NOT IN ('Email') AND ods2 IN ('Collaboration'))) and lower(ods3) NOT LIKE ('%other%')
