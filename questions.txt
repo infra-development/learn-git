@@ -28,3 +28,5 @@ Final: LOG_query : select count(distinct subscriberid) from monthly_points where
 
 
 Final: LOG_query : select count(distinct subscriberid) from monthly_points where cast(bintag as string) IN ('1677628800') AND ((ods1 in ('Social') AND ods2 in ('Text, Voice and Video Communication')) OR (ods1 in ('Communication') AND ods2 NOT IN ('Email') AND ods2 IN ('Collaboration'))) and lower(ods3) NOT LIKE ('%other%')
+
+questions_added
